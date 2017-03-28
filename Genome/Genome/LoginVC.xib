@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginVC" customModule="Genome" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Template-BarsAndViewsArtboard-15" translatesAutoresizingMaskIntoConstraints="NO" id="mxk-GB-dec">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteTextfield" translatesAutoresizingMaskIntoConstraints="NO" id="tJ9-wg-wN1">
+                    <rect key="frame" x="44" y="181" width="288.5" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="tJ9-wg-wN1" secondAttribute="height" multiplier="277:48" id="I4f-j9-vOw"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteTextfield" translatesAutoresizingMaskIntoConstraints="NO" id="Wjx-ZE-JDf">
+                    <rect key="frame" x="44" y="253" width="288.5" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Wjx-ZE-JDf" secondAttribute="height" multiplier="277:47" id="Pnf-h3-dJQ"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BRH-6T-QsT">
+                    <rect key="frame" x="54" y="261" width="268.5" height="33"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ae-tk-EcA">
+                    <rect key="frame" x="44" y="324" width="288.5" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="4Ae-tk-EcA" secondAttribute="height" multiplier="277:47" id="kVH-gJ-bXJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <state key="normal" title="Log In" backgroundImage="gradientButton">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SO1-d4-baV">
+                    <rect key="frame" x="16" y="16" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                    <state key="normal">
+                        <color key="titleColor" red="0.74117647060000003" green="0.78823529410000004" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="axu-gg-ME4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYu-Pg-rzA">
+                    <rect key="frame" x="130" y="381" width="115" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="R7Y-qs-aND"/>
+                    </constraints>
+                    <state key="normal" title="Forgot Password">
+                        <color key="titleColor" red="0.74117647058823533" green="0.78823529411764703" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SP1-ry-tjf">
+                    <rect key="frame" x="54" y="189" width="268.5" height="34"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="SP1-ry-tjf" firstAttribute="bottom" secondItem="tJ9-wg-wN1" secondAttribute="bottom" constant="-8" id="3j4-nD-8Wo"/>
+                <constraint firstItem="mxk-GB-dec" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="48x-Iv-sSi"/>
+                <constraint firstItem="tJ9-wg-wN1" firstAttribute="width" secondItem="mxk-GB-dec" secondAttribute="width" multiplier="0.77" id="7UQ-yo-aBB"/>
+                <constraint firstItem="tJ9-wg-wN1" firstAttribute="bottom" secondItem="mxk-GB-dec" secondAttribute="centerY" multiplier="0.693" id="8TH-dd-43M"/>
+                <constraint firstItem="Wjx-ZE-JDf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="C4T-1a-PGi"/>
+                <constraint firstItem="tJ9-wg-wN1" firstAttribute="width" secondItem="tJ9-wg-wN1" secondAttribute="height" multiplier="277:48" id="Dlp-IN-R3c"/>
+                <constraint firstItem="SP1-ry-tjf" firstAttribute="trailing" secondItem="tJ9-wg-wN1" secondAttribute="trailing" constant="-10" id="EVV-Q2-PGy"/>
+                <constraint firstItem="kYu-Pg-rzA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QaM-Qq-3Pk"/>
+                <constraint firstAttribute="trailing" secondItem="mxk-GB-dec" secondAttribute="trailing" id="R04-9m-l54"/>
+                <constraint firstItem="BRH-6T-QsT" firstAttribute="trailing" secondItem="Wjx-ZE-JDf" secondAttribute="trailing" constant="-10" id="RuO-de-2l6"/>
+                <constraint firstItem="mxk-GB-dec" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Urm-SV-AXu"/>
+                <constraint firstAttribute="bottom" secondItem="mxk-GB-dec" secondAttribute="bottom" id="Vuk-6s-OcQ"/>
+                <constraint firstItem="4Ae-tk-EcA" firstAttribute="width" secondItem="4Ae-tk-EcA" secondAttribute="height" multiplier="277:47" id="Wzg-70-Q2q"/>
+                <constraint firstItem="BRH-6T-QsT" firstAttribute="leading" secondItem="Wjx-ZE-JDf" secondAttribute="leading" constant="10" id="YKO-Vq-7H6"/>
+                <constraint firstItem="Wjx-ZE-JDf" firstAttribute="top" secondItem="tJ9-wg-wN1" secondAttribute="bottom" constant="22" id="ZDm-7P-aVT"/>
+                <constraint firstItem="Wjx-ZE-JDf" firstAttribute="width" secondItem="Wjx-ZE-JDf" secondAttribute="height" multiplier="277:47" id="aOm-YQ-Tte"/>
+                <constraint firstItem="SP1-ry-tjf" firstAttribute="top" secondItem="tJ9-wg-wN1" secondAttribute="top" constant="8" id="b4h-Ys-Snz"/>
+                <constraint firstItem="4Ae-tk-EcA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hcx-2W-hpG"/>
+                <constraint firstItem="4Ae-tk-EcA" firstAttribute="top" secondItem="Wjx-ZE-JDf" secondAttribute="bottom" constant="22" id="jgY-Jt-wiM"/>
+                <constraint firstItem="BRH-6T-QsT" firstAttribute="bottom" secondItem="Wjx-ZE-JDf" secondAttribute="bottom" constant="-8" id="kkc-XE-i5V"/>
+                <constraint firstItem="BRH-6T-QsT" firstAttribute="top" secondItem="Wjx-ZE-JDf" secondAttribute="top" constant="8" id="rLy-5y-0bc"/>
+                <constraint firstItem="SP1-ry-tjf" firstAttribute="leading" secondItem="tJ9-wg-wN1" secondAttribute="leading" constant="10" id="val-iM-WTu"/>
+                <constraint firstItem="tJ9-wg-wN1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="w9L-vq-pFh"/>
+                <constraint firstItem="Wjx-ZE-JDf" firstAttribute="width" secondItem="tJ9-wg-wN1" secondAttribute="width" id="xGw-2P-stS"/>
+                <constraint firstItem="4Ae-tk-EcA" firstAttribute="width" secondItem="Wjx-ZE-JDf" secondAttribute="width" id="yAE-y1-2bZ"/>
+                <constraint firstItem="kYu-Pg-rzA" firstAttribute="top" secondItem="4Ae-tk-EcA" secondAttribute="bottom" constant="8" id="ztb-8X-6vL"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Template-BarsAndViewsArtboard-15" width="750" height="1334"/>
+        <image name="gradientButton" width="571" height="95"/>
+        <image name="whiteTextfield" width="571" height="95"/>
+    </resources>
+</document>

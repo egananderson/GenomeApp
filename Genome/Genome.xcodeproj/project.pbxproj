@@ -15,6 +15,10 @@
 		55C6B2F21E88E15800A69A4A /* GenomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C6B2F11E88E15800A69A4A /* GenomeUITests.swift */; };
 		55C6B3011E88E1FD00A69A4A /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C6B2FF1E88E1FD00A69A4A /* SplashVC.swift */; };
 		55C6B3021E88E1FD00A69A4A /* SplashVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55C6B3001E88E1FD00A69A4A /* SplashVC.xib */; };
+		55C6B3051E8B12B800A69A4A /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C6B3031E8B12B700A69A4A /* SignUpVC.swift */; };
+		55C6B3061E8B12B800A69A4A /* SignUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55C6B3041E8B12B700A69A4A /* SignUpVC.xib */; };
+		55C6B3091E8B21A800A69A4A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C6B3071E8B21A800A69A4A /* LoginVC.swift */; };
+		55C6B30A1E8B21A800A69A4A /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55C6B3081E8B21A800A69A4A /* LoginVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		55C6B2F31E88E15800A69A4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55C6B2FF1E88E1FD00A69A4A /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		55C6B3001E88E1FD00A69A4A /* SplashVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashVC.xib; sourceTree = "<group>"; };
+		55C6B3031E8B12B700A69A4A /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		55C6B3041E8B12B700A69A4A /* SignUpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpVC.xib; sourceTree = "<group>"; };
+		55C6B3071E8B21A800A69A4A /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		55C6B3081E8B21A800A69A4A /* LoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +110,10 @@
 				55C6B2D11E88E15700A69A4A /* AppDelegate.swift */,
 				55C6B2FF1E88E1FD00A69A4A /* SplashVC.swift */,
 				55C6B3001E88E1FD00A69A4A /* SplashVC.xib */,
+				55C6B3031E8B12B700A69A4A /* SignUpVC.swift */,
+				55C6B3041E8B12B700A69A4A /* SignUpVC.xib */,
+				55C6B3071E8B21A800A69A4A /* LoginVC.swift */,
+				55C6B3081E8B21A800A69A4A /* LoginVC.xib */,
 				55C6B2D51E88E15700A69A4A /* Main.storyboard */,
 				55C6B2D81E88E15700A69A4A /* Assets.xcassets */,
 				55C6B2DA1E88E15700A69A4A /* LaunchScreen.storyboard */,
@@ -196,6 +208,7 @@
 				TargetAttributes = {
 					55C6B2CD1E88E15600A69A4A = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = F77WGCCN72;
 						ProvisioningStyle = Automatic;
 					};
 					55C6B2E11E88E15800A69A4A = {
@@ -235,8 +248,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55C6B30A1E8B21A800A69A4A /* LoginVC.xib in Resources */,
 				55C6B2DC1E88E15700A69A4A /* LaunchScreen.storyboard in Resources */,
 				55C6B3021E88E1FD00A69A4A /* SplashVC.xib in Resources */,
+				55C6B3061E8B12B800A69A4A /* SignUpVC.xib in Resources */,
 				55C6B2D91E88E15700A69A4A /* Assets.xcassets in Resources */,
 				55C6B2D71E88E15700A69A4A /* Main.storyboard in Resources */,
 			);
@@ -264,6 +279,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				55C6B2D21E88E15700A69A4A /* AppDelegate.swift in Sources */,
+				55C6B3051E8B12B800A69A4A /* SignUpVC.swift in Sources */,
+				55C6B3091E8B21A800A69A4A /* LoginVC.swift in Sources */,
 				55C6B3011E88E1FD00A69A4A /* SplashVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +431,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F77WGCCN72;
 				INFOPLIST_FILE = Genome/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = d.Genome;
@@ -426,6 +444,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F77WGCCN72;
 				INFOPLIST_FILE = Genome/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = d.Genome;

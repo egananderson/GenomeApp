@@ -21,6 +21,20 @@ class SplashVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func signUpPressed(_ sender: UIButton) {
+        let signUpVC = SignUpVC()
+        self.navigationController?.pushViewController(signUpVC, animated: true)
+    }
+    
+    @IBAction func logInPressed(_ sender: UIButton) {
+        let loginVC = LoginVC()
+        self.navigationController?.pushViewController(loginVC, animated: true)
+    }
+    
+    @IBAction func logInFacebookPressed(_ sender: UIButton) {
+    }
+    
+    
 
     /*
     // MARK: - Navigation
