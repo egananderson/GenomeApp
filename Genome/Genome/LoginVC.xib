@@ -13,6 +13,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginVC" customModule="Genome" customModuleProvider="target">
             <connections>
+                <outlet property="logInButton" destination="4Ae-tk-EcA" id="Ely-qh-UzM"/>
+                <outlet property="passwordBackground" destination="Wjx-ZE-JDf" id="BI8-rJ-lka"/>
+                <outlet property="usernameBackground" destination="tJ9-wg-wN1" id="7fl-lH-tIb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -52,22 +55,12 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SO1-d4-baV">
-                    <rect key="frame" x="16" y="16" width="30" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                    <state key="normal">
-                        <color key="titleColor" red="0.74117647060000003" green="0.78823529410000004" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="axu-gg-ME4"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYu-Pg-rzA">
-                    <rect key="frame" x="130" y="381" width="115" height="30"/>
+                    <rect key="frame" x="123.5" y="381" width="128" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="R7Y-qs-aND"/>
                     </constraints>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                     <state key="normal" title="Forgot Password">
                         <color key="titleColor" red="0.74117647058823533" green="0.78823529411764703" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -78,6 +71,21 @@
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxg-VR-tLf">
+                    <rect key="frame" x="6" y="25" width="43" height="32"/>
+                    <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="1PI-Dl-g6Z"/>
+                        <constraint firstAttribute="width" constant="43" id="eOM-gy-v5c"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                    <state key="normal" title="&lt;">
+                        <color key="titleColor" red="0.74117647058823533" green="0.78431372549019607" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="E9e-wU-0wt"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -88,6 +96,7 @@
                 <constraint firstItem="Wjx-ZE-JDf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="C4T-1a-PGi"/>
                 <constraint firstItem="tJ9-wg-wN1" firstAttribute="width" secondItem="tJ9-wg-wN1" secondAttribute="height" multiplier="277:48" id="Dlp-IN-R3c"/>
                 <constraint firstItem="SP1-ry-tjf" firstAttribute="trailing" secondItem="tJ9-wg-wN1" secondAttribute="trailing" constant="-10" id="EVV-Q2-PGy"/>
+                <constraint firstItem="rxg-VR-tLf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="25" id="GCc-9L-ZnB"/>
                 <constraint firstItem="kYu-Pg-rzA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QaM-Qq-3Pk"/>
                 <constraint firstAttribute="trailing" secondItem="mxk-GB-dec" secondAttribute="trailing" id="R04-9m-l54"/>
                 <constraint firstItem="BRH-6T-QsT" firstAttribute="trailing" secondItem="Wjx-ZE-JDf" secondAttribute="trailing" constant="-10" id="RuO-de-2l6"/>
@@ -98,6 +107,7 @@
                 <constraint firstItem="Wjx-ZE-JDf" firstAttribute="top" secondItem="tJ9-wg-wN1" secondAttribute="bottom" constant="22" id="ZDm-7P-aVT"/>
                 <constraint firstItem="Wjx-ZE-JDf" firstAttribute="width" secondItem="Wjx-ZE-JDf" secondAttribute="height" multiplier="277:47" id="aOm-YQ-Tte"/>
                 <constraint firstItem="SP1-ry-tjf" firstAttribute="top" secondItem="tJ9-wg-wN1" secondAttribute="top" constant="8" id="b4h-Ys-Snz"/>
+                <constraint firstItem="rxg-VR-tLf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="6" id="hRi-03-lpN"/>
                 <constraint firstItem="4Ae-tk-EcA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hcx-2W-hpG"/>
                 <constraint firstItem="4Ae-tk-EcA" firstAttribute="top" secondItem="Wjx-ZE-JDf" secondAttribute="bottom" constant="22" id="jgY-Jt-wiM"/>
                 <constraint firstItem="BRH-6T-QsT" firstAttribute="bottom" secondItem="Wjx-ZE-JDf" secondAttribute="bottom" constant="-8" id="kkc-XE-i5V"/>

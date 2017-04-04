@@ -13,6 +13,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpVC" customModule="Genome" customModuleProvider="target">
             <connections>
+                <outlet property="password1Background" destination="FaY-uI-JEb" id="bJC-tr-Hgg"/>
+                <outlet property="password2Background" destination="2TG-z5-muD" id="uZc-Nn-UPw"/>
+                <outlet property="signUpButton" destination="DoS-qM-Zrd" id="vdW-Qi-cMv"/>
+                <outlet property="usernameBackground" destination="7gc-jy-Oen" id="VDb-7b-1jy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,6 +28,21 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Template-BarsAndViewsArtboard-15" translatesAutoresizingMaskIntoConstraints="NO" id="5Bz-iF-KBe">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2CD-6m-WKz">
+                    <rect key="frame" x="6" y="25" width="43" height="32"/>
+                    <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="43" id="i9Q-Qf-1dZ"/>
+                        <constraint firstAttribute="height" constant="32" id="yfC-Cl-rPw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                    <state key="normal" title="&lt;">
+                        <color key="titleColor" red="0.74117647060000003" green="0.7843137255" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="TOz-Sw-JHy"/>
+                    </connections>
+                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteTextfield" translatesAutoresizingMaskIntoConstraints="NO" id="7gc-jy-Oen">
                     <rect key="frame" x="43.5" y="111.5" width="288.5" height="50"/>
                     <constraints>
@@ -73,17 +92,6 @@
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKD-d1-Xxm">
-                    <rect key="frame" x="16" y="16" width="30" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                    <state key="normal">
-                        <color key="titleColor" red="0.74117647058823533" green="0.78823529411764703" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="Rcl-ap-hyA"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -93,11 +101,13 @@
                 <constraint firstItem="2TG-z5-muD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8Fe-MN-0ZF"/>
                 <constraint firstItem="DoS-qM-Zrd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="95s-ju-md7"/>
                 <constraint firstItem="DF5-lX-hfl" firstAttribute="top" secondItem="2TG-z5-muD" secondAttribute="top" constant="8" id="AHq-ua-o4d"/>
+                <constraint firstItem="2CD-6m-WKz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="6" id="BQs-kt-WkM"/>
                 <constraint firstItem="jiQ-S5-7Nn" firstAttribute="leading" secondItem="FaY-uI-JEb" secondAttribute="leading" constant="10" id="Bh5-ct-0Fg"/>
                 <constraint firstItem="FaY-uI-JEb" firstAttribute="width" secondItem="7gc-jy-Oen" secondAttribute="width" id="CEH-Xx-6cE"/>
                 <constraint firstItem="FaY-uI-JEb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="DMw-Vy-fOD"/>
                 <constraint firstItem="5Bz-iF-KBe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Gk7-Uw-hu2"/>
                 <constraint firstItem="DF5-lX-hfl" firstAttribute="leading" secondItem="2TG-z5-muD" secondAttribute="leading" constant="10" id="LLI-m0-dHw"/>
+                <constraint firstItem="2CD-6m-WKz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="25" id="Lho-if-meH"/>
                 <constraint firstItem="7gc-jy-Oen" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MUj-QZ-tHr"/>
                 <constraint firstItem="DF5-lX-hfl" firstAttribute="trailing" secondItem="2TG-z5-muD" secondAttribute="trailing" constant="-10" id="Qql-91-hJu"/>
                 <constraint firstAttribute="bottom" secondItem="5Bz-iF-KBe" secondAttribute="bottom" id="RI1-nE-S5e"/>

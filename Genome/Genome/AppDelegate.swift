@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.isTranslucent = true
+        navigationController.navigationBar.isHidden = true
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
         

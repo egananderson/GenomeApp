@@ -13,6 +13,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashVC" customModule="Genome" customModuleProvider="target">
             <connections>
+                <outlet property="facebookButton" destination="bKn-7e-h6P" id="WHi-yc-V48"/>
+                <outlet property="logInButton" destination="DR8-VQ-zsb" id="1xk-VV-mbr"/>
+                <outlet property="signUpButton" destination="YMf-bn-OVc" id="BWK-E0-v5r"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -58,6 +61,7 @@
                         <constraint firstAttribute="width" secondItem="bKn-7e-h6P" secondAttribute="height" multiplier="295:49" id="euf-bx-Ku7"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <color key="tintColor" red="0.25098039215686274" green="0.36470588235294116" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="Log in with Facebook" backgroundImage="blueButton"/>
                     <connections>
                         <action selector="logInFacebookPressed:" destination="-1" eventType="touchUpInside" id="a8v-kn-wu5"/>
