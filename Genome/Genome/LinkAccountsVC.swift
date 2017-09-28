@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import SafariServices
 
-class LinkAccountsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class LinkAccountsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, OAuthIODelegate {
+
     
     @IBOutlet var tableView: UITableView!
     
@@ -18,9 +20,31 @@ class LinkAccountsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet var stripeImageView: UIImageView!
     
+    @IBOutlet var loadingView: UIView!
+    
+    @IBOutlet var animationView: AnimationView!
+    
+    @IBOutlet var continueButton: UIButton!
+    
+    var accountWasAdded = false
+    var accountLinking = ""
+    
+    let accountController = AccountController.sharedInstance
+    let userController = UserController.sharedInstance
+        
+    var oauthioModal: OAuthIOModal?
+    let oauthKey = "4GQzipc_uhXaiLgoKViHp6vM2Eg"
+    let oauthOptions = NSMutableDictionary()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(startAnimation), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+        
+        userController.load()
+        self.oauthioModal = OAuthIOModal(key: oauthKey, delegate: self)
+        self.oauthioModal?.clearCache()
+        self.oauthOptions.setValue("true", forKey: "cache")
         
         let nib = UINib(nibName: "LinkAccountsCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "accountCell")
@@ -44,11 +68,34 @@ class LinkAccountsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.stripeImageView.backgroundColor = .clear
         
         self.navigationController?.navigationBar.isHidden = true
+    
+        NotificationCenter.default.addObserver(self, selector: #selector(LinkAccountsVC.refresh), name: NSNotification.Name(rawValue: "refreshAccountList"), object: nil)
+        
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
-
+    
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        if self.presentingViewController != nil {
+            self.continueButton.titleLabel?.text = "Done"
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        startAnimation()
+    }
+    
+    func startAnimation() {
+        self.animationView.startAnimating(color: UIColor(red: 53/255, green: 62/255, blue: 80/255, alpha: 1))
+    }
+    
+    func refresh() {
+        self.tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,28 +112,120 @@ class LinkAccountsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         switch indexPath.row {
         case 0:
-            cell.logoImage.image = UIImage(named: "facebook_gray")
+            cell.account = self.accountController.allAccounts?[0]
         case 1:
-            cell.logoImage.image = UIImage(named: "google_gray")
+            cell.account = self.accountController.allAccounts?[1]
         case 2:
-            cell.logoImage.image = UIImage(named: "spotify_gray")
+            cell.account = self.accountController.allAccounts?[2]
         default:
-            cell.logoImage.image = UIImage(named: "pinterest_gray")
+            cell.account = self.accountController.allAccounts?[3]
         }
         
+        for acccount in (self.userController.currentUser?.accounts)!{
+            if cell.account?.accountType == acccount{
+                cell.account?.isUpToDate = true
+            }
+        }
+        
+        cell.formatCell()
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
+        
+        switch indexPath.row {
+        case 0:
+            self.accountLinking = "facebook"
+        case 1:
+            self.accountLinking = "google"
+        case 2:
+            self.accountLinking = "spotify"
+        case 3:
+            self.accountLinking = "pinterest"
+        default:
+            return
+        }
+        self.oauthioModal?.show(withProvider: self.accountLinking, options: self.oauthOptions as [NSObject :AnyObject])
     }
     
     
-    @IBAction func continueButtonPressed(_ sender: UIButton) {
-        self.navigationController?.popToRootViewController(animated: true)
-    }
-    
+    @IBAction func continueButtonPressed(_ sender: UIButton) {   
+        //Dismiss immediately if no accounts added, otherwise do animation
+        if !accountWasAdded {
+            if self.presentingViewController != nil{
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                let dataDnaVC = DataDNAVC()
+                self.navigationController?.pushViewController(dataDnaVC, animated: true)
+            }
+        } else {
+            self.loadingView.alpha = 0
+            self.view.bringSubview(toFront: loadingView)
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+                self.loadingView.alpha = 1
+            }, completion: nil)
+            
+            // delete this timer and push the vc once the networking request is complete
+            _ = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
+                if self.presentingViewController != nil{
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    let dataDnaVC = DataDNAVC()
+                    self.navigationController?.pushViewController(dataDnaVC, animated: true)
+                }
+            }
 
+        }
+    }
+    
+    //MARK: - OAuth Delegates
+    
+    func didReceiveOAuthIOCode(_ code: String!) {
+        print("didReceiveOAuthIOCode")
+        return
+    }
+    
+    func didAuthenticateServerSide(_ body: String!, andResponse response: URLResponse!) {
+        print("didAuthenticateServerSide")
+        return
+    }
+    
+    func didReceiveOAuthIOResponse(_ request: OAuthIORequest!) {
+        var cred: Dictionary = request.getCredentials()
+        
+        //        For OAuth 2
+        //        print(cred["access_token"]!)
+        //        For OAuth 1
+        //        print(cred["oauth_token"])
+        //        print(cred["oauth_token_secret "])
+        //        print(request.getCredentials())
+        let token = cred["access_token"] as! String
+        accountWasAdded = true
+        accountController.connectAccount(type: self.accountLinking, token:token)
+        var tokens = userController.oauthTokens[(userController.currentUser?.userID)!]
+        if (tokens == nil) {
+            tokens = [:]
+        }
+        tokens?[self.accountLinking] = token
+        userController.oauthTokens[(userController.currentUser?.userID)!] = tokens
+        userController.save()
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "refreshAccountList"), object: nil)
+        return
+    }
+    
+    func didFail(withOAuthIOError error: Error!) {
+        print("didFailwithOAuthIOError")
+        return
+    }
+    
+    func didFailAuthenticationServerSide(_ body: String!, andResponse response: URLResponse!, andError error: Error!) {
+        print("didFailAuthenticationServerSide")
+        return
+    }
+
+    
+    
     /*
     // MARK: - Navigation
 

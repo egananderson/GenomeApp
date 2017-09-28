@@ -11,11 +11,14 @@ import UIKit
 class SignUpVC: UIViewController {
 
     @IBOutlet var usernameBackground: UIImageView!
-    
+    @IBOutlet var usernameText: UITextField!
+
     @IBOutlet var password1Background: UIImageView!
-    
+    @IBOutlet var password1Text: UITextField!
+
     @IBOutlet var password2Background: UIImageView!
-    
+    @IBOutlet var password2Text: UITextField!
+
     @IBOutlet var signUpButton: UIButton!
     
     override func viewDidLoad() {
@@ -47,22 +50,35 @@ class SignUpVC: UIViewController {
         signUpButton.layer.cornerRadius = signUpButton.frame.height/2
         signUpButton.clipsToBounds = true
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func signUpPressed(_ sender: UIButton) {
-        let linkAccountsVC = LinkAccountsVC()
-        self.navigationController?.pushViewController(linkAccountsVC, animated: true)
-    }
-    
     @IBAction func backButtonPressed(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
-   
     
+    @IBAction func signUpPressed(_ sender: UIButton) {
+        if(!(usernameText.text?.isEmpty)! && !(password1Text.text?.isEmpty)! && !(password2Text.text?.isEmpty)!){
+            if(password1Text.text == password2Text.text){
+                let userController = UserController.sharedInstance
+                userController.registerNewUser(email: usernameText.text!, password: password1Text.text!){ (success, error) -> () in
+                    if (success) {
+                        OperationQueue.main.addOperation {
+                            let linkAccountsVC = LinkAccountsVC()
+                            self.navigationController?.pushViewController(linkAccountsVC, animated: true)
+                        }
+                    } else {
+                        print("Error durring registration " + error.debugDescription)
+                    }
+                }
+            }
+        }
+    }
+    
+
 
     /*
     // MARK: - Navigation

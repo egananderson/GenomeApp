@@ -14,7 +14,11 @@ class SplashVC: UIViewController {
     
     @IBOutlet var logInButton: UIButton!
     
-    @IBOutlet var facebookButton: UIButton!
+    let userController = UserController.sharedInstance
+    
+    var oauthioModal: OAuthIOModal?
+    let oauthKey = "4GQzipc_uhXaiLgoKViHp6vM2Eg"
+    let oauthOptions = NSMutableDictionary()
 
     
     override func viewDidLoad() {
@@ -42,11 +46,9 @@ class SplashVC: UIViewController {
         logInButton.layer.cornerRadius = logInButton.frame.height/2
         logInButton.clipsToBounds = true
         
-        facebookButton.setBackgroundImage(nil, for: .normal)
-        facebookButton.backgroundColor = UIColor.init(red: 64.0/255, green: 93.0/255, blue: 147.0/255, alpha: 1)
-        facebookButton.layer.cornerRadius = facebookButton.frame.height/2
-        facebookButton.clipsToBounds = true
-        
+        self.oauthioModal = OAuthIOModal(key: oauthKey, delegate: self)
+        self.oauthOptions.setValue("true", forKey: "cache")
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,20 +65,4 @@ class SplashVC: UIViewController {
         let loginVC = LoginVC()
         self.navigationController?.pushViewController(loginVC, animated: true)
     }
-    
-    @IBAction func logInFacebookPressed(_ sender: UIButton) {
-    }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

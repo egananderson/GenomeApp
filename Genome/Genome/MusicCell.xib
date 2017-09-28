@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="KGk-i7-Jjw" customClass="MusicCell" customModule="Genome" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="71.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Ultralight Beam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOM-1r-Qzf">
+                        <rect key="frame" x="15" y="12" width="308" height="19"/>
+                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                        <color key="textColor" red="0.20784313725490194" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kanye West - The Life of Pablo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYK-vb-kaa">
+                        <rect key="frame" x="15" y="34" width="308" height="15"/>
+                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
+                        <color key="textColor" red="0.28235294117647058" green="0.33725490196078434" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="April 20, 2017 - 5:45pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhF-qr-4TT">
+                        <rect key="frame" x="15" y="51" width="308" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.28235294117647058" green="0.33725490196078434" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="TOM-1r-Qzf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="6kU-aZ-Pw2"/>
+                    <constraint firstItem="uYK-vb-kaa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="7uj-jv-yu4"/>
+                    <constraint firstItem="JhF-qr-4TT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="F8W-G0-J5O"/>
+                    <constraint firstItem="JhF-qr-4TT" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="11" id="Izc-L9-49F"/>
+                    <constraint firstItem="JhF-qr-4TT" firstAttribute="top" secondItem="TOM-1r-Qzf" secondAttribute="top" constant="39" id="JYO-dr-Pkw"/>
+                    <constraint firstItem="uYK-vb-kaa" firstAttribute="top" secondItem="TOM-1r-Qzf" secondAttribute="top" constant="22" id="UMy-lm-pJR"/>
+                    <constraint firstItem="TOM-1r-Qzf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="bNa-Ia-ljx"/>
+                    <constraint firstItem="TOM-1r-Qzf" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="11" id="bwn-lq-0dJ"/>
+                    <constraint firstItem="uYK-vb-kaa" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="11" id="nvB-RB-GLL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="artistAlbumLabel" destination="uYK-vb-kaa" id="jDr-Vb-fUq"/>
+                <outlet property="artistLabelConstraint" destination="UMy-lm-pJR" id="cNJ-N3-z3e"/>
+                <outlet property="timeLabel" destination="JhF-qr-4TT" id="gkd-rj-L2c"/>
+                <outlet property="timeLabelConstraint" destination="JYO-dr-Pkw" id="pMB-jV-s19"/>
+                <outlet property="titleLabel" destination="TOM-1r-Qzf" id="H5n-OW-KMp"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="73"/>
+        </tableViewCell>
+    </objects>
+</document>

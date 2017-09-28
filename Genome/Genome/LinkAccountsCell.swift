@@ -11,6 +11,8 @@ import UIKit
 class LinkAccountsCell: UITableViewCell {
     
     @IBOutlet var logoImage: UIImageView!
+    
+    var account: Account?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +23,14 @@ class LinkAccountsCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func formatCell() {
+        if (account?.isUpToDate)! {
+            logoImage.image = account?.imageColor
+        } else {
+            logoImage.image = account?.imageGray
+        }
     }
     
 }

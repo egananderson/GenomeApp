@@ -1,19 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Viva_Persib.ttf">
+            <string>VivaPersib</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashVC" customModule="Genome" customModuleProvider="target">
             <connections>
-                <outlet property="facebookButton" destination="bKn-7e-h6P" id="WHi-yc-V48"/>
                 <outlet property="logInButton" destination="DR8-VQ-zsb" id="1xk-VV-mbr"/>
                 <outlet property="signUpButton" destination="YMf-bn-OVc" id="BWK-E0-v5r"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -26,65 +30,73 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Template-BarsAndViewsArtboard-15" translatesAutoresizingMaskIntoConstraints="NO" id="tFf-xY-MhU">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="375" id="XMQ-JW-IAF"/>
+                    </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="TQ0-rV-hch">
-                    <rect key="frame" x="58.5" y="107.5" width="258.5" height="136"/>
+                    <rect key="frame" x="58.5" y="137.5" width="258.5" height="136"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="TQ0-rV-hch" secondAttribute="height" multiplier="255:134" id="O9U-nR-vJ9"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMf-bn-OVc">
-                    <rect key="frame" x="43.5" y="355.5" width="288.5" height="48"/>
+                    <rect key="frame" x="43.5" y="398.5" width="288.5" height="48"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="YMf-bn-OVc" secondAttribute="height" multiplier="295:49" id="PSi-TM-GbO"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                     <state key="normal" title="Sign up" backgroundImage="gradientButton"/>
                     <connections>
                         <action selector="signUpPressed:" destination="-1" eventType="touchUpInside" id="RaG-3N-UYw"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DR8-VQ-zsb">
-                    <rect key="frame" x="43.5" y="425.5" width="288.5" height="48"/>
+                    <rect key="frame" x="43.5" y="472.5" width="288.5" height="48"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="DR8-VQ-zsb" secondAttribute="height" multiplier="295:49" id="dfd-bG-G7h"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                     <state key="normal" title="Log in" backgroundImage="gradientButton"/>
                     <connections>
                         <action selector="logInPressed:" destination="-1" eventType="touchUpInside" id="30m-pU-9Xr"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKn-7e-h6P">
-                    <rect key="frame" x="43.5" y="495.5" width="288.5" height="48"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Izg-AP-zad">
+                    <rect key="frame" x="59" y="233" width="258" height="41"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GENOME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3F-w8-qKS">
+                            <rect key="frame" x="45.5" y="-11" width="168" height="63"/>
+                            <fontDescription key="fontDescription" name="VivaPersib" family="Viva Persib" pointSize="56"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.24665898084640503" green="0.28957942128181458" blue="0.34631001949310303" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="bKn-7e-h6P" secondAttribute="height" multiplier="295:49" id="euf-bx-Ku7"/>
+                        <constraint firstItem="k3F-w8-qKS" firstAttribute="centerY" secondItem="Izg-AP-zad" secondAttribute="centerY" id="3nI-xT-voz"/>
+                        <constraint firstAttribute="width" secondItem="Izg-AP-zad" secondAttribute="height" multiplier="258:41" id="Vzc-FL-kP1"/>
+                        <constraint firstItem="k3F-w8-qKS" firstAttribute="centerX" secondItem="Izg-AP-zad" secondAttribute="centerX" id="ZWc-tk-DKZ"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                    <color key="tintColor" red="0.25098039215686274" green="0.36470588235294116" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Log in with Facebook" backgroundImage="blueButton"/>
-                    <connections>
-                        <action selector="logInFacebookPressed:" destination="-1" eventType="touchUpInside" id="a8v-kn-wu5"/>
-                    </connections>
-                </button>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="bKn-7e-h6P" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2CO-T3-Ypd"/>
                 <constraint firstAttribute="trailing" secondItem="tFf-xY-MhU" secondAttribute="trailing" id="4gM-eL-J39"/>
                 <constraint firstItem="YMf-bn-OVc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="84c-aq-zxq"/>
-                <constraint firstItem="DR8-VQ-zsb" firstAttribute="top" secondItem="YMf-bn-OVc" secondAttribute="bottom" constant="22" id="GBM-xE-pAk"/>
-                <constraint firstItem="bKn-7e-h6P" firstAttribute="width" secondItem="YMf-bn-OVc" secondAttribute="width" id="HHz-Jd-tb8"/>
+                <constraint firstItem="Izg-AP-zad" firstAttribute="bottom" secondItem="TQ0-rV-hch" secondAttribute="bottom" id="9o0-Yb-QbY"/>
+                <constraint firstItem="DR8-VQ-zsb" firstAttribute="top" secondItem="YMf-bn-OVc" secondAttribute="bottom" constant="26" id="GBM-xE-pAk"/>
                 <constraint firstItem="TQ0-rV-hch" firstAttribute="width" secondItem="tFf-xY-MhU" secondAttribute="width" multiplier="0.69" id="M8W-BD-e4e"/>
-                <constraint firstItem="bKn-7e-h6P" firstAttribute="top" secondItem="DR8-VQ-zsb" secondAttribute="bottom" constant="22" id="P0v-O2-ITn"/>
                 <constraint firstAttribute="bottom" secondItem="tFf-xY-MhU" secondAttribute="bottom" id="Qex-Es-Ao2"/>
+                <constraint firstItem="Izg-AP-zad" firstAttribute="leading" secondItem="TQ0-rV-hch" secondAttribute="leading" id="Tbh-6N-hH7"/>
                 <constraint firstItem="TQ0-rV-hch" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TpZ-WV-lD9"/>
+                <constraint firstItem="Izg-AP-zad" firstAttribute="trailing" secondItem="TQ0-rV-hch" secondAttribute="trailing" id="cq8-j7-US7"/>
                 <constraint firstItem="DR8-VQ-zsb" firstAttribute="width" secondItem="YMf-bn-OVc" secondAttribute="width" id="dmY-zC-x9W"/>
                 <constraint firstItem="YMf-bn-OVc" firstAttribute="width" secondItem="tFf-xY-MhU" secondAttribute="width" multiplier="0.77" id="dru-11-DtU"/>
-                <constraint firstItem="DR8-VQ-zsb" firstAttribute="bottom" secondItem="tFf-xY-MhU" secondAttribute="bottom" multiplier="0.71" id="fPW-Z3-I1J"/>
+                <constraint firstItem="DR8-VQ-zsb" firstAttribute="bottom" secondItem="tFf-xY-MhU" secondAttribute="bottom" multiplier="0.78" id="fPW-Z3-I1J"/>
                 <constraint firstItem="tFf-xY-MhU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gRc-Sk-YJy"/>
                 <constraint firstItem="tFf-xY-MhU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="m6J-hx-GsC"/>
-                <constraint firstItem="TQ0-rV-hch" firstAttribute="bottom" secondItem="tFf-xY-MhU" secondAttribute="centerY" multiplier="0.73" id="mMU-CG-0yk"/>
+                <constraint firstItem="TQ0-rV-hch" firstAttribute="bottom" secondItem="tFf-xY-MhU" secondAttribute="centerY" multiplier="0.82" id="mMU-CG-0yk"/>
                 <constraint firstItem="DR8-VQ-zsb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yni-BC-rNk"/>
             </constraints>
             <point key="canvasLocation" x="35.5" y="53.5"/>
@@ -98,7 +110,6 @@
     <resources>
         <image name="Template-BarsAndViewsArtboard 1" width="750" height="1334"/>
         <image name="Template-BarsAndViewsArtboard-15" width="750" height="1334"/>
-        <image name="blueButton" width="571" height="95"/>
         <image name="gradientButton" width="571" height="95"/>
         <image name="logo" width="375" height="267"/>
     </resources>

@@ -11,8 +11,10 @@ import UIKit
 class LoginVC: UIViewController {
     
     @IBOutlet var usernameBackground: UIImageView!
+    @IBOutlet var usernameText: UITextField!
     
     @IBOutlet var passwordBackground: UIImageView!
+    @IBOutlet var passwordText: UITextField!
     
     @IBOutlet var logInButton: UIButton!
     
@@ -49,7 +51,22 @@ class LoginVC: UIViewController {
     @IBAction func backButtonPressed(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
-
+    
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
+        if(!(usernameText.text?.isEmpty)! && !(passwordText.text?.isEmpty)!){
+            let userController = UserController.sharedInstance
+            userController.loginUser(email: usernameText.text!, password: passwordText.text!){ (success, error) -> () in
+                if (success) {
+                    OperationQueue.main.addOperation {
+                        let dataDnaVC = DataDNAVC()
+                        self.navigationController?.pushViewController(dataDnaVC, animated: true)
+                    }
+                } else {
+                    print("Error durring login " + error.debugDescription)
+                }
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation
